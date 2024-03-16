@@ -1,5 +1,7 @@
-FROM openjdk:17
+# make sure jdk can be found from docker hub
+FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY ./demo-0.0.1-SNAPSHOT.jar/ app
-EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "inventory-tracker.jar"]
+#s make sure have /app backslash at front, otherwise copy can fail
+COPY ./app.jar/ /app
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

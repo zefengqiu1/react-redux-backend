@@ -1,4 +1,4 @@
 spring:
   data:
-    mongodb:
-      uri: mongodb://mongodb:27016/test
+    mongodb:  # direct use mongodb as ip address as docker will mapping for you automatically
+      uri: mongodb://mongodb:27017/test
